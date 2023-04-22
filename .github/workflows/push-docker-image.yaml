@@ -1,11 +1,10 @@
 name: push docker
 on:
-  [push]
-  # workflow_dispatch:
+  [push, workflow_dispatch]
 env:
     DOCKER_USER: ${{secrets.DOCKER_USER}}
     DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-    REPO_NAME: ${{secrets.REPO_NAME}}
+    REPO_NAME: ${{vars.REPO_NAME}}
 
 jobs:
   push-image-to-docker-hub:
